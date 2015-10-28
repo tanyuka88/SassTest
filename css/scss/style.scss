@@ -1,16 +1,15 @@
-$blue: #3bbfce;
+$blue: white;
 $margin: 0 auto;
 $block-width:80%;
 $full-block:100%;
-$backgr-color:red;
-
-body{
-  padding:0;
-  margin: 0;
-  background-color: white;
+$backgr-color:blue;
+@mixin rounded-corners($radius){
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
 }
 #gradient{
-  position: absolute;
+  background-color: white;
   width:$full-block;
   height: $full-block;
   padding:0;
@@ -21,6 +20,7 @@ body{
   margin: $margin;
   ul{
     padding: 0;
+    margin: 0;
     li {
       display: inline-block;
       color: $blue;
@@ -29,13 +29,16 @@ body{
 }
 .block{
   width: $block-width;
+  height: 50px;
   margin: $margin;
    div{
       float: left;
-      width: $full-block/4-1;
+      width: $full-block/4-3;
       height: 50px;
-      background-color: $backgr-color;
-      border: 1px solid white;
+      background-color:darken(cornflowerblue,5%);
+      border-right: 1px solid white;
+     @include rounded-corners(10px);
+     margin-right: 2%;
   }
 }
 .clear{
